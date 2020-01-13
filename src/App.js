@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component, useState, useEffect} from 'react';
+import Card from './components/card';
+
+
+const url = 'https://api.open5e.com/classes/';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [classes, setClasses] = useState([]);
+
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(response => {
+                setClasses(response.results);
+            })
+            .catch(error => console.log(error));
+    }, []);
+
+    return (
+        <div>
+            <Card classes={classes}/>
+        </div>
+    )
 }
 
 export default App;
