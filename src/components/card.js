@@ -1,19 +1,13 @@
 import React from 'react'
 
-const Card = ({ classes }) => {
-    console.log(classes);
-
-  return (
-    <div>
-        { classes.map((cls) => (
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{cls.name}</h5>
-              </div>
-            </div>
-          )) }
-    </div>
-  )
+const Card = ({title, items}) => {
+    const random_item = items[Math.floor(Math.random()*items.length)];
+    console.log(random_item)
+      return (
+        <div>
+            <h1>{title}: {random_item.name}</h1>
+        </div>
+      )
 };
 
 export default Card
