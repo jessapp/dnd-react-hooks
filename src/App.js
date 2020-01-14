@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import TitleCard from './components/card';
+import Header from './components/header';
 
 
 const classesUrl = 'https://api.open5e.com/classes/';
@@ -14,7 +16,7 @@ function App() {
         .then(response => {
             const all_classes = response.results;
             const random_item = all_classes[Math.floor(Math.random()*all_classes.length)];
-            setClass(random_item.name);
+            setClass(random_item);
         })
         .catch(error => console.log(error));
     };
@@ -25,7 +27,7 @@ function App() {
         .then(response => {
             const all_races = response.results;
             const random_item = all_races[Math.floor(Math.random()*all_races.length)];
-            setRace(random_item.name);
+            setRace(random_item);
         })
         .catch(error => console.log(error));
     };
@@ -41,15 +43,25 @@ function App() {
 
     return (
         <div>
-            <h1>Your class is: {currentClass}</h1>
-            <button
-                onClick={ () => fetchClass() }
-            >Get another class</button>
+            <Header/>
 
-            <h1>Your race is: {currentRace}</h1>
-            <button
-                onClick={ () => fetchRace()}
-            >Get another race</button>
+            <div class="row">
+                <div class="col-sm-6">
+                    <TitleCard
+                        title="class"
+                        currentItem={ currentClass }
+                        callback={ fetchClass }
+                    />
+                </div>
+
+                <div class="col-sm-6">
+                    <TitleCard
+                        title="race"
+                        currentItem={ currentRace }
+                        callback={ fetchRace }
+                    />
+                </div>
+            </div>
         </div>
     )
 }

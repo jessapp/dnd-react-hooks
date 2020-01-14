@@ -1,13 +1,25 @@
 import React from 'react'
 
-const Card = ({title, items}) => {
-    const random_item = items[Math.floor(Math.random()*items.length)];
-    console.log(random_item)
+const TitleCard = ({title, currentItem, callback}) => {
       return (
-        <div>
-            <h1>{title}: {random_item.name}</h1>
-        </div>
+          <div>
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Your { title } is: { currentItem.name }</h1>
+                    <p class="card-text">{ currentItem.desc }</p>
+                </div>
+
+                <div class="col-sm-3">
+                    <button class="btn btn-primary"
+                        onClick={ callback }
+                    >
+                        Get another { title }
+                    </button>
+                </div>
+            </div>
+
+          </div>
       )
 };
 
-export default Card
+export default TitleCard
