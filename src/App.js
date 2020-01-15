@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import TitleCard from './components/card';
 import Header from './components/header';
+import { classesUrl, racesUrl } from './constants'
 
-
-const classesUrl = 'https://api.open5e.com/classes/';
-const racesUrl = 'https://api.open5e.com/races/';
 
 function App() {
     const [currentClass, setClass] = useState("");
