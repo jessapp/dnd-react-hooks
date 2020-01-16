@@ -43,8 +43,8 @@ function App() {
         <div>
             <Header/>
 
-            <div class="row">
-                <div class="col-sm-6">
+            <div className="row">
+                <div className="col-sm-6">
                     <TitleCard
                         title="class"
                         currentItem={ currentClass }
@@ -52,7 +52,7 @@ function App() {
                     />
                 </div>
 
-                <div class="col-sm-6">
+                <div className="col-sm-6">
                     <TitleCard
                         title="race"
                         currentItem={ currentRace }

@@ -15,19 +15,20 @@ const TitleCard = ({title, currentItem, callback}) => {
 
       return (
           <div>
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">Your { title } is: { currentItem.name }</h1>
-                    <p class="card-text">{ description }</p>
+            <div className="card">
+                <div className="card-body">
+                    <h1 className="card-title">Your { title } is: { currentItem.name }</h1>
+                    <p className="card-text">{ description }</p>
                 </div>
 
                 <div>
-                    <button class="btn btn-primary"
+                    <button className="btn btn-primary"
                         onClick={ callback }
                     >
                         Get another { title }
                     </button>
                 </div>
+                <br />
             </div>
 
           </div>
