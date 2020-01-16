@@ -22,7 +22,7 @@ const TitleCard = ({title, currentItem, callback}) => {
                 </div>
 
                 <div>
-                    <button className="btn btn-primary"
+                    <button className="btn btn-success"
                         onClick={ callback }
                     >
                         Get another { title }
