@@ -43,6 +43,7 @@ function App() {
         <div>
             <Header/>
 
+            <div class="container-fluid">
             <div className="row">
                 <div className="col-sm-6">
                     <TitleCard
@@ -59,6 +60,7 @@ function App() {
                         callback={ fetchRace }
                     />
                 </div>
+            </div>
             </div>
         </div>
     )

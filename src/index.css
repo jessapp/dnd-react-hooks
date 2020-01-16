@@ -6,9 +6,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background: url(static/img/map.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+    font-family: 'Palatino Linotype', Palatino, serif;
+}
+
+.card {
+  margin-left: 25px;
+  margin-right: 25px;
+  background: white;
+  opacity: .9;
+}
+
+.jumbotron {
+  background: white;
+  opacity: .9;
+}
+
